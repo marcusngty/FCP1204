@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Iko-soya</title>
+        <link rel="stylesheet" href="soya.css">
+        <link href="https://fonts.cdnfonts.com/css/lucida-handwriting-std" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" >
+        <link rel="icon" href="/image/Iconlogo.png" type="image/icon">
+    </head>
+    <body>
+      <header>
+        <div class="navigation">
+          <a href="index.html" class="logobutton">
+            <div class="logo">
+            <img src="/image/logo_nb.png" alt="Iko-soya logo" class="logo-image">
+            </div>
+          </a>         
+        
+        <!-- nav bar for the desktop/laptop device -->
+        <nav class="navbar , navbar-expand-lg"> <!--  navbar-light d-none d-lg-block -->
+          <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a href="menu.html">Menu</a>
+                </li>
+                <li class="nav-item">
+                  <a href="location.html">Locations</a>
+                </li>
+                <li class="nav-item">
+                  <a href="opportunities.html">Opportunities</a>
+                </li>
+              <li class="nav-item">
+                  <a href="aboutus.html">About Us</a>
+                </li>
+          </ul>
+        </nav>
+        
+            <div class="icon-container">
+              <button id="toggle-theme">
+                    <i class="fa-solid fa-moon moon-icon" style="color:white"></i>
+                    <i class="fa-regular fa-sun sun-icon"></i>
+              </button>
+              </div>
+        
+          
+          <script>
+            document.addEventListener("DOMContentLoaded", function () {
+              const toggleButton = document.getElementById("toggle-theme");
+          
+              // Initialize theme based on saved preference or default to light
+              const savedTheme = localStorage.getItem("theme") || "light";
+              document.documentElement.setAttribute("data-theme", savedTheme);
+          
+              // Toggle theme on button click
+              toggleButton.addEventListener("click", () => {
+                  const currentTheme = document.documentElement.getAttribute("data-theme");
+                  const newTheme = currentTheme === "dark" ? "light" : "dark";
+                  document.documentElement.setAttribute("data-theme", newTheme);
+                  localStorage.setItem("theme", newTheme);
+              });
+          });
+          
+          </script>
+
+          <button id="audio-toggle" class="audio-button">
+            <span id="audio-icon" class="fa-solid fa-volume-xmark"></span> <!-- Default Icon: Muted -->
+        </button>
+        
+        <!-- Background Music -->
+        <audio id="background-audio" loop>
+            <source src="/video/jazz_music.m4a" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+
+        <script>
+          document.addEventListener("DOMContentLoaded", function () {
+            const audioToggle = document.getElementById("audio-toggle");
+            const audioIcon = document.getElementById("audio-icon");
+            const backgroundAudio = document.getElementById("background-audio");
+        
+            // Ensure audio is off by default
+            backgroundAudio.muted = true;
+        
+            // Toggle audio on button click
+            audioToggle.addEventListener("click", () => {
+                if (backgroundAudio.paused) {
+                    // Play audio
+                    backgroundAudio.muted = false;
+                    backgroundAudio.play();
+                    audioIcon.classList.remove("fa-volume-xmark");
+                    audioIcon.classList.add("fa-volume-up");
+                } else {
+                    // Pause audio
+                    backgroundAudio.pause();
+                    backgroundAudio.muted = true;
+                    audioIcon.classList.remove("fa-volume-up");
+                    audioIcon.classList.add("fa-volume-xmark");
+                }
+            });
+        });        
+        </script>
+
+      <div class="button-bars-x">
+        <button><i id="menu-button" class="fa-solid fa-bars" style="color: #f6cc61"></i></button>
+        
+    </div>
+    </div>
+    
+      
+
+    <div id="sub-navibar">
+      
+      <a href="menu.html">Menu</a>
+      <a href="location.html">Locations</a>
+      <a href="opportunities.html">Opportunities</a>
+      <a href="aboutus.html">About us</a>
+    </div>
+    <script>
+      const menuOpenbutton = document.querySelector("#menu-button");
+      menuOpenbutton.addEventListener("click", ()=>{
+        //toggle menu visibility
+        document.getElementById("sub-navibar").classList.toggle("visible");
+      });
+    </script>
+
+       
+      </header>
+      
+
+        <main>
+          <div class="infoaboutus">
+            <video src="/Video/Open_Day.mp4" muted autoplay controls></video>
+          <div class="aboutus">
+          <div class="main-slide1">
+            <div class="menu-head" >
+              <h1>~~ About Us ~~</h1>
+            </div>
+            
+            <h2>Our Story</h2>
+            <div class="our_story">
+              <h5>IKO-soya was born from a passion for sharing authentic, high-quality, plant-based desserts and beverages that bring comfort and joy to every customer. The journey began in Kota Kinabalu, Sabah where our founder, inspired by the rich food culture and diverse flavors of Southeast Asia, sought to create a space where people could enjoy wholesome, delicious, and innovative treats.</h5>
+            </div>
+            
+            <h2>The Beginning</h2>
+            <div class="history">
+              <img style="width:42.5%; margin:55px;" src="/image/located_store.jpg" alt="store">
+              <p></p>
+              <h5>Our first store opened in the heart of Sabah Kota Kinabalu, where we started by offering our signature Soy Milk Drinks and Taufufa (Soy Pudding), a classic dessert enjoyed by locals and visitors alike. With a focus on quality and flavor, we used only the best ingredients, including non-GMO soybeans, to create smooth and creamy drinks and desserts. These initial offerings quickly became a favorite among our customers, who appreciated the natural, plant-based goodness in every sip and spoonful.</h5>
+            </div>
+            
+            <h2>Expanding the Menu</h2>
+            <div class="history" style="margin-bottom:0px;">
+              <h5>As our customer base grew, so did our vision. We wanted to offer even more options for our patrons to enjoy, which led us to expand our menu to include a variety of exciting and unique products. From there, we introduced our Ice Cream Series, featuring flavors such as Chocolate Lover and Classic Sundae, along with a wide range of Cokai (Fried Dough Sticks) with different savory fillings, and Pudding Series, including creative options like Perfect Two and Purple Lover.</h5>
+              <p></p>
+              <h5>The addition of snack items, like Fried Enoki Mushrooms and Plant-Based Nuggets, further enriched our menu, offering a variety of sweet and savory options that cater to all tastes. We also began offering a customizable dessert experience with our Create Your Own Taufufa, allowing customers to select their preferred toppings and syrups, making it a fun and personalized treat.</h5>
+              
+            </div>
+            <div class="history , expand_menu">
+            <img src="/image/taufufa.jpg" alt="taufufa">
+            <p></p>          
+            <img src="/image/snackes.jpg" alt="snackes">
+          </div>
+
+            <h2>Our Vision</h2>            
+            <div class="history">
+              <h5>At IKO-soya, we believe in the power of food to connect people and create memories. Our goal has always been to create a welcoming environment where everyone can enjoy wholesome, plant-based treats made with love and care. As we continue to expand, we strive to stay true to our roots—offering unique, high-quality products that showcase the rich culinary traditions of Malaysia while embracing new flavors and innovations.<br>From our humble beginnings in Kuching, we are proud to be a part of the growing food scene in Malaysia and beyond, bringing joy to all who taste our creations.</h5>
+            </div>
+
+            <h1>~~ Social Media ~~</h1>
+
+            <div class="fb">
+            <iframe style="margin-left:50px;border:none;overflow:hidden" src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fikosoya%2Fposts%2Fpfbid02btoqQfGhXY4TfdyY5tZjjVGUmaP5bH3gBKzqKLBrfkvhNskqUKUodWyLia3Q5pAzl&show_text=true&width=500" width="1000" height="525" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+            <iframe style="margin-left:45px;border:none;overflow:hidden" src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fikosoya%2Fposts%2Fpfbid02nwKqZJntQtjjumrXKbVdx2cWf5R6ieFJ7oFopsw1ieFgkgxqCQyaMPWSnCtVPkBwl&show_text=true&width=500" width="1000" height="550" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+            </div>
+
+          <div class="ig">
+            <div class=ig style="padding-right:50px;">
+              <blockquote  class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/DCQhKhkPYUw/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/reel/DCQhKhkPYUw/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">View this post on Instagram</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div> <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"> <div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div> <div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"> <div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div> <div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div> <div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/reel/DCQhKhkPYUw/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">A post shared by Ī-Ko Soya 一口豆花 (@ikosoya)</a></p></div></blockquote>
+              <script async src="//www.instagram.com/embed.js"></script>
+            </div>
+            <div class="ig" style="padding-left:30px;">
+            <blockquote  class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/C9erwWzvWZD/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/p/C9erwWzvWZD/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">View this post on Instagram</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div> <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"> <div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div> <div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"> <div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div> <div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div> <div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/p/C9erwWzvWZD/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">A post shared by Ī-Ko Soya 一口豆花 (@ikosoya)</a></p></div></blockquote>
+              <script async src="//www.instagram.com/embed.js"></script>
+            </div>
+          </div>
+
+          <script src="https://static.elfsight.com/platform/platform.js" async></script>
+<div class="elfsight-app-e6af38b3-534b-4282-b771-28325363d64e" data-elfsight-app-lazy></div>
+
+          <h1>~~ Gallery ~~</h1>
+            <div class="history , expand_menu">
+              <img src="/image/taufufa3.jpg" alt="taufufa">
+              <p></p>          
+              <img src="/image/taufufa4.jpg" alt="snackes">
+            </div>
+
+            <div class="history , expand_menu " style="border-top:0px; justify-content:center;">
+              <img  src="/image/make.jpg" alt="taufufa">
+              <p></p>          
+              <img src="/image/make_2.jpg" alt="snackes">
+              <p></p>
+              <img src="/image/make_3.jpg" alt="snackes">
+            </div>
+
+            <div class="history , expand_menu" style="border-top:0px; justify-content:center;">
+              <img  src="/image/taufufa2.jpg" alt="taufufa">
+              <p></p>          
+              <img src="/image/soymilk.jpg" alt="snackes">
+            </div>
+
+          </div>
+          </div>
+          </div>
+
+          
+            <div class="ratings">
+              <h2>Give Us A Ratings</h2>
+              </div>
+          <div class="radio">
+            <input id="rating-5" type="radio" name="rating" value="5" >
+            <label for="rating-5" title="5 stars">
+              <svg viewBox="0 0 576 512" height="1em" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"
+                ></path>
+              </svg>
+            </label>
+
+            <input id="rating-4" type="radio" name="rating" value="4" >
+            <label for="rating-4" title="4 stars">
+              <svg viewBox="0 0 576 512" height="1em" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"
+                ></path>
+              </svg>
+            </label>
+
+            <input id="rating-3" type="radio" name="rating" value="3" >
+            <label for="rating-3" title="3 stars">
+              <svg viewBox="0 0 576 512" height="1em" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"
+                ></path>
+              </svg>
+            </label>
+
+            <input id="rating-2" type="radio" name="rating" value="2" >
+            <label for="rating-2" title="2 stars">
+              <svg viewBox="0 0 576 512" height="1em" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"
+                ></path>
+              </svg>
+            </label>
+
+            <input id="rating-1" type="radio" name="rating" value="1" >
+            <label for="rating-1" title="1 star">
+              <svg viewBox="0 0 576 512" height="1em" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"
+                ></path>
+              </svg>
+            </label>
+          </div>
+          
+       </main>
+    <footer>
+      <ul>
+        <li><b>INFORMATION</b></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="location.html">Locations</a></li>
+        <li><a href="aboutus.html">About Us</a></li>
+        <li><p>Iko-soya &copy; 2024</p></li>
+
+        <li>
+          <div class="icon">
+          <a href="https://www.facebook.com/ikosoya"><i class="fa-brands fa-facebook fa-2xl"></i></a>
+          <a href="https://www.instagram.com/ikosoya/?hl=en"><i class="fa-brands fa-instagram fa-2xl"></i></a>
+          <a href="https://api.whatsapp.com/message/LQTYOAJ4B3U6H1?autoload=1&app_absent=0"><i class="fa-brands fa-whatsapp fa-2xl"></i></a>
+          <a href="https://linktr.ee/ikosoya"><i class="fa-solid fa-link fa-2xl"></i></a>
+          </div>
+        </li>
+      </ul>
+      
+      <ul>
+        <li><b>OUR MENU</b></li>
+        <li><a href="soymilk.html">Soymilk</a></li>
+        <li><a href="taufufa.html">Taufufa</a></li>
+        <li><a href="cakoi.html">Cakoi</a></li>
+        <li><a href="snacks.html">Snacks</a></li>
+        <li><a href="softserve.html">Soft Serve</a></li>
+        <li><a href="others.html">Others</a></li>
+      </ul>
+      <ul>
+        <li><b>GET IN TOUCH</b></li>
+        <li><a href="opportunities.html">Job Opportunities</a></li>
+        <li><a href="opportunities.html#oppertunities">Business Opportunities</a></li>
+      </ul>
+      <ul>
+        <li><b>Locations</b></li>
+        <li><pre>Block No F, Lot 1,
+  Ground Floor, Lintas Jaya,
+  88300 Kota Kinabalu, Sabah
+    </pre>
+    <a href="https://www.google.com/maps/place/I-KO+Soya+%E4%B8%80%E5%8F%A3%E8%B1%86%E8%8A%B1/@5.931348,116.0707548,15z/data=!4m6!3m5!1s0x323b694c3b0a3bd7:0x9c34af4290bc88a4!8m2!3d5.931348!4d116.0707548!16s%2Fg%2F11v5bk7zj6?entry=ttu&g_ep=EgoyMDI0MTIwNC4wIKXMDSoASAFQAw%3D%3D">Google maps</a></li>
+      </ul>
+    
+    
+    
+    </footer>
+  </body>
+    
+</html>
+

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Iko-soya</title>
+        <link rel="stylesheet" href="soya.css">
+        <link href="https://fonts.cdnfonts.com/css/lucida-handwriting-std" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" >
+        <link rel="icon" href="/image/Iconlogo.png" type="image/icon">
+    </head>
+    <body>
+      <header>
+        <div class="navigation">
+          <a href="index.html" class="logobutton">
+            <div class="logo">
+            <img src="/image/logo_nb.png" alt="Iko-soya logo" class="logo-image">
+            </div>
+          </a>
+         
+        
+        <!-- nav bar for the desktop/laptop device -->
+        <nav class="navbar , navbar-expand-lg">
+          <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a href="menu.html">Menu</a>
+                </li>
+                <li class="nav-item">
+                  <a href="location.html">Locations</a>
+                </li>
+                <li class="nav-item">
+                  <a href="opportunities.html">Opportunities</a>
+                </li>
+              <li class="nav-item">
+                  <a href="aboutus.html">About Us</a>
+                </li>
+              </ul>
+            </nav>
+
+        
+            <div class="icon-container">
+              <button id="toggle-theme">
+                    <i class="fa-solid fa-moon moon-icon" style="color:white"></i>
+                    <i class="fa-regular fa-sun sun-icon"></i>
+              </button>
+              </div>
+        
+          
+          <script>
+            document.addEventListener("DOMContentLoaded", function () {
+              const toggleButton = document.getElementById("toggle-theme");
+          
+              // Initialize theme based on saved preference or default to light
+              const savedTheme = localStorage.getItem("theme") || "light";
+              document.documentElement.setAttribute("data-theme", savedTheme);
+          
+              // Toggle theme on button click
+              toggleButton.addEventListener("click", () => {
+                  const currentTheme = document.documentElement.getAttribute("data-theme");
+                  const newTheme = currentTheme === "dark" ? "light" : "dark";
+                  document.documentElement.setAttribute("data-theme", newTheme);
+                  localStorage.setItem("theme", newTheme);
+              });
+          });
+          
+          </script>
+
+          <button id="audio-toggle" class="audio-button">
+            <span id="audio-icon" class="fa-solid fa-volume-xmark"></span> <!-- Default Icon: Muted -->
+        </button>
+        
+        <!-- Background Music -->
+        <audio id="background-audio" loop>
+            <source src="/video/jazz_music.m4a" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+
+        <script>
+          document.addEventListener("DOMContentLoaded", function () {
+            const audioToggle = document.getElementById("audio-toggle");
+            const audioIcon = document.getElementById("audio-icon");
+            const backgroundAudio = document.getElementById("background-audio");
+        
+            // Ensure audio is off by default
+            backgroundAudio.muted = true;
+        
+            // Toggle audio on button click
+            audioToggle.addEventListener("click", () => {
+                if (backgroundAudio.paused) {
+                    // Play audio
+                    backgroundAudio.muted = false;
+                    backgroundAudio.play();
+                    audioIcon.classList.remove("fa-volume-xmark");
+                    audioIcon.classList.add("fa-volume-up");
+                } else {
+                    // Pause audio
+                    backgroundAudio.pause();
+                    backgroundAudio.muted = true;
+                    audioIcon.classList.remove("fa-volume-up");
+                    audioIcon.classList.add("fa-volume-xmark");
+                }
+            });
+        });        
+        </script>
+
+      <div class="button-bars-x">
+        <button><i id="menu-button" class="fa-solid fa-bars" style="color: #f6cc61"></i></button>
+        
+
+    </div>
+    </div>
+      
+
+    <div id="sub-navibar">
+      
+      <a href="menu.html">Menu</a>
+      <a href="location.html">Locations</a>
+      <a href="opportunities.html">Opportunities</a>
+      <a href="aboutus.html">About us</a>
+    </div>
+    <script>
+      const menuOpenbutton = document.querySelector("#menu-button");
+      menuOpenbutton.addEventListener("click", ()=>{
+        //toggle menu visibility
+        document.getElementById("sub-navibar").classList.toggle("visible");
+      });
+    </script>
+
+       
+      </header>
+      
+      <main class="info">
+        <div class="home">
+          <div>
+            <video src="/Video/soymilk_heading.mp4"  autoplay muted></video>
+          </div>
+        </div>
+        <div class="heading">
+          <h1>-- Soymilk Series --</h1>
+          <p>Rich, creamy, and nutrient-packed, soymilk is a versatile drink crafted from the finest soybeans. It's perfect on its own or as a base for creative beverages, offering a deliciously smooth taste with every sip.</p>
+          <br>
+          <p style="color:#6e6245">~~ Your can choose the sugar syrup ~~</p>
+        </div>
+        <div class="choose_sugar">
+          <div class="sugar-item">
+              <img src="/No_background/white_sugar.png" alt="white sugar">
+              <span class="tips">White Sugar</span>
+          </div>
+          <div class="sugar-item">
+              <img src="/No_background/gula_melaka.png" alt="gula melaka">
+              <span class="tips">Gula Melaka</span>
+          </div>
+          <div class="sugar-item">
+              <img src="/No_background/ginger_sugar.png" alt="ginger sugar">
+              <span class="tips">Zinger Sugar</span>
+          </div>
+          <div class="sugar-item">
+              <img src="/No_background/chrysanthenum_sugar.png" alt="chrysanthenum sugar">
+              <span class="tips">Chrysanthenum Sugar</span>
+          </div>
+        </div>
+
+        <div class="menu-detail-left">
+          <div class="text">
+            <h1>Hot Classic<span> Soymilk</span></h1>
+              <p><b>A</b> warm and comforting beverage made from premium, non-GMO soybeans, offering a smooth, creamy texture and a naturally nutty flavor. Choose your preferred sweetness with a selection of syrup options: White Sugar, Gula Melaka, Ginger Sugar, or Chrysanthemum Sugar. Each syrup adds a unique touch, from the classic sweetness of white sugar to the rich, caramel notes of gula melaka or the warming zing of ginger sugar. Perfect for a soothing, customized drink to enjoy on a chilly day.
+              </p>   
+              <p class="topping">RM 5.50</p>       
+            </div>
+              <div class="image">
+            <img src="/MENU_PHOTO/Dine_In(350ml).png"  alt="Dine in (350ml)">
+          </div>
+        </div>
+        
+
+        <div class="menu-detail-right">
+            <div>
+              <img src="/MENU_PHOTO/Takeaway(500ml).png"  alt="Takeaway(500ml)">
+            </div>
+            <div>
+              <h1>Cold Bottled<span> Soymilk</span></h1>
+              <p><b>A</b> refreshing, chilled drink made from high-quality, non-GMO soybeans, offering a smooth and creamy texture with a naturally nutty flavor. You can personalize your sweetness with your choice of syrup: White Sugar, Gula Melaka, Ginger Sugar, or Chrysanthemum Sugar. Whether you prefer the classic sweetness, the rich complexity of gula melaka, or the herbal notes of ginger and chrysanthemum, each syrup provides a refreshing, satisfying option for any time of the day.
+              </p>  
+              <p class="topping">RM 6.50</p>                 
+            </div>
+        </div>
+
+        <div class="menu-detail-left">
+            <div>
+              <h1><i class="fa-regular fa-thumbs-up" style="color: #FFD43B;"></i> Grass Jelly<span> Soymilk</span></h1>
+              <p><b>G</b>lass jelly adds a delightful contrast to the rich, mild flavor of the soy milk, providing a refreshing, slightly firm texture that complements the smoothness of the drink. This beverage is not only a satisfying treat but also a healthy option for those seeking a dairy-free, plant-based alternative to traditional milk-based drinks.
+              </p>         
+              <p class="topping">RM 7.90</p>          
+            </div>
+            <div>
+              <img style="width:60%; height:60%;" src="/MENU_PHOTO/Grass_Jelly_Soymilk.png"  alt="grass jelly soymilk">
+            </div>
+          </div>
+        
+        <div class="menu-detail-right">
+            <div>
+            <img style="width:60%; height:60%;" src="/MENU_PHOTO/Red_Bean_Soymilk.png"  alt="Red Bean Soymilk">
+            </div>
+            <div>
+              <h1>Red Bean<span> Soymilk</span></h1>
+              <p><b>A</b> delightful and nourishing blend of creamy soy milk and naturally sweet red beans. Our Red Bean Soy Milk offers a smooth, velvety texture with the added richness of soft, earthy red beans. The subtle sweetness of the beans perfectly complements the light, nutty flavor of the soy milk, creating a refreshing and satisfying drink. Perfect served cold or warm, it's a wholesome, comforting beverage that combines the best of both traditional and plant-based ingredients.
+              </p>
+              <p class="topping">RM 7.90</p>       
+            </div>
+        </div>
+        
+        <div class="menu-detail-left">  
+        <div>
+          <h1>Coconut Jelly<span> Soymilk</span></h1>
+          <p><b>A</b> tropical, creamy treat that combines the richness of soy milk with the refreshing texture of coconut jelly. Our Coconut Jelly Milk features smooth, velvety soy milk, perfectly complemented by chewy coconut jelly pieces that add a fun, refreshing bite. The natural sweetness of coconut enhances the creamy soy milk, creating a satisfying, indulgent drink that’s both refreshing and nourishing. Enjoy it chilled for the ultimate tropical refreshment.
+          </p>
+          <p class="topping">RM 7.90</p>       
+        </div>
+        <div>
+            <img style="width:60%; height:60%;" src="MENU_PHOTO/Water_Chestnut_Popping_Boba_Soymilk.png"  alt="coconut jelly soymilk">
+        </div>
+        </div>
+
+        <div class="menu-detail-right">
+            <div>
+            <img style="width:60%; height:60%;" src="/MENU_PHOTO/Water_Chestnut_Popping_Boba_Soymilk.png"  alt="Water Chestnut Popping Boba soymilk">
+            </div>
+            <div>
+              <h1>Water Chestnut Popping Boba<span> Soymilk</span></h1>
+              <p><b>A</b> fun and refreshing twist on traditional soy milk! Our Water Chestnuts Popping Boba Soy Milk combines smooth, creamy soy milk with crunchy water chestnut bits and chewy popping boba for an exciting texture experience. As you sip, the popping boba bursts with a fruity sweetness, perfectly complementing the light, nutty flavor of the soy milk and the crispness of the water chestnuts. A playful, delicious drink that adds a touch of excitement to your day!
+              </p>
+              <p class="topping">RM 8.50</p>       
+            </div>
+        </div>
+
+        <div id="purplepotatosoymilk" class="menu-detail-left">
+            <div>
+              <h1><i class="fa-regular fa-thumbs-up" style="color: #FFD43B;"></i> Purple Potato<span> Soymilk</span></h1>
+              <p><b>A</b> rich and velvety drink that blends the natural sweetness of purple potatoes with creamy soy milk. Our Purple Potato Soy Milk offers a unique, earthy flavor with a smooth, indulgent texture. The vibrant purple color adds a visually appealing touch, while the sweetness of the purple potato perfectly complements the nutty undertones of the soy milk. This nutritious and delicious drink is a perfect choice for those seeking a comforting and wholesome beverage.
+              </p>            
+              <p class="topping">RM 8.50</p>       
+            </div>
+            <div>
+              <img style="width:45%; height:45%;" src="/MENU_PHOTO/Purple_Potato_Soymilk.png"  alt="purple patato soymilk">
+            </div>
+          </div>
+        
+       </main>
+    <footer>
+      <ul>
+        <li><b>INFORMATION</b></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="location.html">Locations</a></li>
+        <li><a href="aboutus.html">About Us</a></li>
+        <li><p>Iko-soya &copy; 2024</p></li>
+
+        <li>
+          <div class="icon">
+          <a href="https://www.facebook.com/ikosoya"><i class="fa-brands fa-facebook fa-2xl"></i></a>
+          <a href="https://www.instagram.com/ikosoya/?hl=en"><i class="fa-brands fa-instagram fa-2xl"></i></a>
+          <a href="https://api.whatsapp.com/message/LQTYOAJ4B3U6H1?autoload=1&app_absent=0"><i class="fa-brands fa-whatsapp fa-2xl"></i></a>
+          <a href="https://linktr.ee/ikosoya"><i class="fa-solid fa-link fa-2xl"></i></a>
+          </div>
+        </li>
+        
+      </ul>
+      <ul>
+        <li><b>OUR MENU</b></li>
+        <li><a href="soymilk.html">Soymilk</a></li>
+        <li><a href="taufufa.html">Taufufa</a></li>
+        <li><a href="cakoi.html">Cakoi</a></li>
+        <li><a href="snacks.html">Snacks</a></li>
+        <li><a href="softserve.html">Soft Serve</a></li>
+        <li><a href="others.html">Others</a></li>
+      </ul>
+      <ul>
+        <li><b>GET IN TOUCH</b></li>
+        <li><a href="opportunities.html">Job Opportunities</a></li>
+        <li><a href="opportunities.html#oppertunities">Business Opportunities</a></li>
+      </ul>
+      <ul>
+        <li><b>Locations</b></li>
+        <li><pre>Block No F, Lot 1,
+  Ground Floor, Lintas Jaya,
+  88300 Kota Kinabalu, Sabah
+    </pre>
+    <a href="https://www.google.com/maps/place/I-KO+Soya+%E4%B8%80%E5%8F%A3%E8%B1%86%E8%8A%B1/@5.931348,116.0707548,15z/data=!4m6!3m5!1s0x323b694c3b0a3bd7:0x9c34af4290bc88a4!8m2!3d5.931348!4d116.0707548!16s%2Fg%2F11v5bk7zj6?entry=ttu&g_ep=EgoyMDI0MTIwNC4wIKXMDSoASAFQAw%3D%3D">Google maps</a></li>
+      </ul>
+    
+    
+    
+    </footer>
+  </body>
+    
+</html>
